@@ -1,0 +1,149 @@
+@import "./../Shared.scss";
+
+.header {
+  background-color: $background-color1;
+  color: $font-color1;
+  width: 100%;
+
+  .header-container {
+    @include container;
+    @include flex-between;
+  }
+}
+
+//===========================================================
+// Logo
+//===========================================================
+
+.logo {
+  border-right: solid 0.1rem rgba(255, 255, 255, 0.8);
+  display: flex;
+  padding-right: 2%;
+  padding-block: 0.7%;
+
+  div {
+    background-color: $font-color1;
+    color: $background-color1;
+    width: clamp(20px, 1.75vw, 1.75vw);
+    display: flex;
+    justify-content: center;
+  }
+
+  .space-right {
+    margin-right: 5%;
+  }
+
+  p {
+    font-size: 1vw;
+    font-size: clamp(14px, 1vw, 1vw);
+    font-weight: 900;
+  }
+}
+
+//===========================================================
+// Styles for the top nav links
+//===========================================================
+
+.tag-container,
+.more-container {
+  border-bottom: 0.5vh solid transparent;
+  border-right: solid 0.1rem rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-block: 0.75%;
+}
+.more-container {
+  width: 130%;
+
+  &:hover {
+    border-bottom-color: white;
+  }
+  p {
+    padding-right: 15%;
+  }
+}
+
+//===========================================================
+// Adds colors to bottom borders of top nav links
+//===========================================================
+
+.h-red {
+  &:hover {
+    border-bottom-color: red;
+  }
+}
+.h-orange {
+  &:hover {
+    border-bottom-color: orange;
+  }
+}
+.h-yellow {
+  &:hover {
+    border-bottom-color: yellow;
+  }
+}
+.h-green {
+  &:hover {
+    border-bottom-color: green;
+  }
+}
+.h-blue {
+  &:hover {
+    border-bottom-color: blue;
+  }
+}
+.h-purple {
+  &:hover {
+    border-bottom-color: purple;
+  }
+}
+
+//===========================================================
+// Search Bar
+//===========================================================
+
+.search-container {
+  position: relative;
+  display: flex;
+  padding-left: 2%;
+
+  .search {
+    form {
+      input {
+        border-radius: 2px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 2.5% 3%;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+  .search-icon {
+    position: absolute;
+    color: black;
+    margin: 2.5% 0 0 80%;
+  }
+}
+
+//===========================================================
+// Media Queries
+//===========================================================
+
+@media only screen and (max-width: 1120px) {
+  .header-container {
+    width: 95% !important;
+  }
+  .hidden {
+    display: none;
+  }
+  .search-icon {
+    color: white !important;
+    margin: 0 0 0 0.5rem !important;
+    position: relative !important;
+  }
+}

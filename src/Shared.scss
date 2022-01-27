@@ -1,0 +1,13 @@
+$background-color1: #000000;
+$font-color1: white;
+
+@mixin container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
