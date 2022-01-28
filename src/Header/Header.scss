@@ -7,10 +7,16 @@
 
   .header-container {
     @include container;
-    @include flex-between;
+
+    .header-top,
+    .header-bottom {
+      @include flex-between;
+    }
   }
 }
-
+//**********************************************************
+//Header Top
+//**********************************************************
 //===========================================================
 // Logo
 //===========================================================
@@ -49,7 +55,7 @@
   border-bottom: 0.5vh solid transparent;
   border-right: solid 0.1rem rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bolder;
   display: flex;
   justify-content: center;
@@ -129,12 +135,60 @@
     margin: 2.5% 0 0 80%;
   }
 }
+//**********************************************************
+//Header Bottom
+//**********************************************************
+.header-bottom {
+  background-color: white;
+  border-block: 1px solid black;
+  color: black;
+  width: 100%;
+  padding-block: 0.4%;
+  transition: 10s;
+  z-index: -100 !important;
+  position: relative;
 
+  .header-bottom-container {
+    @include container;
+    @include flex-between;
+
+    .bottom-header-more {
+      font-size: 1.75rem;
+      font-weight: 600;
+      width: 80%;
+    }
+    .bottom-headerTag-container {
+      width: 100%;
+
+      .bottom-header-tags {
+        font-size: 0.9rem;
+        font-weight: bolder;
+        width: 60%;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+          color: white;
+        }
+      }
+    }
+  }
+}
+.hidden-bottom-header {
+  margin-top: -100%;
+  transition: 10s;
+}
+.bottom-expand {
+  display: none;
+}
 //===========================================================
 // Media Queries
 //===========================================================
 
 @media only screen and (max-width: 1120px) {
+  //========================================
+  //Top Header
+  //========================================
   .header-container {
     width: 95% !important;
   }
@@ -145,5 +199,15 @@
     color: white !important;
     margin: 0 0 0 0.5rem !important;
     position: relative !important;
+  }
+  //========================================
+  //Bottom Header
+  //========================================
+  .bottom-expand {
+    display: block;
+  }
+  .header-bottom-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
