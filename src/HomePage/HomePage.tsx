@@ -7,6 +7,9 @@ const HomePage = ({ fakeData }: { fakeData: any }) => {
     <div>
       <NewsSection fakeData={fakeData} />
       <SecondarySections fakeData={fakeData} />
+      <SecondarySections fakeData={fakeData} />
+      <SecondarySections fakeData={fakeData} />
+      <SecondarySections fakeData={fakeData} />
     </div>
   )
 }

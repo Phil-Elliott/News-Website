@@ -2,6 +2,7 @@
 
 .secondary-container {
   @include container;
+  padding-bottom: clamp(4rem, 5%, 5%);
 
   h1 {
     font-size: 1.75rem;
@@ -22,5 +23,20 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+//===========================================================
+// Media Queries
+//===========================================================
+@media only screen and (max-width: 900px) {
+  .secondary-articles-container {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .secondary-articles-container {
+    grid-template-columns: 1fr !important;
   }
 }
