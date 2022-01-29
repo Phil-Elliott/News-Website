@@ -1,0 +1,49 @@
+@import "./../../Shared.scss";
+
+.news-container {
+  @include container;
+  margin-block: 4%;
+
+  .news-header-container {
+    @include flex-between;
+    font-size: 0.8rem;
+    padding-bottom: 1%;
+    h1 {
+      opacity: 0.8;
+    }
+    h2 {
+      opacity: 0.6;
+    }
+  }
+
+  .articles-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+
+    .article-container {
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding-top: 35%;
+
+      p {
+        width: 90%;
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        margin: 0 auto;
+        padding-bottom: 2%;
+      }
+    }
+    .grid-row-span-2 {
+      grid-row: span 2;
+      p {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}

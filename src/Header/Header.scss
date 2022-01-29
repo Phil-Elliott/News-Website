@@ -4,6 +4,8 @@
   background-color: $background-color1;
   color: $font-color1;
   width: 100%;
+  z-index: 100;
+  position: relative;
 
   .header-container {
     @include container;
@@ -145,7 +147,6 @@
   width: 100%;
   padding-block: 0.4%;
   transition: 10s;
-  z-index: -100 !important;
   position: relative;
 
   .header-bottom-container {
@@ -166,6 +167,7 @@
         width: 60%;
         padding: 0.25rem 0.5rem;
         cursor: pointer;
+
         &:hover {
           background-color: rgba(0, 0, 0, 0.8);
           color: white;

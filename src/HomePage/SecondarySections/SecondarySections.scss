@@ -1,0 +1,26 @@
+@import "./../../Shared.scss";
+
+.secondary-container {
+  @include container;
+
+  h1 {
+    font-size: 1.75rem;
+    opacity: 0.8;
+    padding-bottom: 1%;
+  }
+
+  .secondary-articles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+
+    .article-container {
+      img {
+        width: 100%;
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}
