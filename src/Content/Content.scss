@@ -1,0 +1,47 @@
+@import "./../Shared.scss";
+
+.content {
+  @include container;
+  margin-block: clamp(4rem, 5%, 5%);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+
+  .left-content {
+    h1 {
+      font-size: 1.75rem;
+      font-weight: bold;
+      padding-bottom: 1.25rem;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    h3 {
+      font-size: 1rem;
+      padding-bottom: 1.25rem;
+    }
+    img {
+      width: 100%;
+      padding-bottom: 1.25rem;
+    }
+  }
+  .right-content {
+    p {
+      padding-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      img {
+        width: 100%;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

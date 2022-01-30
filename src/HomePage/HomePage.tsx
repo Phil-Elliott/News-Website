@@ -2,14 +2,22 @@ import React from "react"
 import NewsSection from "./NewsSection/NewsSection"
 import SecondarySections from "./SecondarySections/SecondarySections"
 
-const HomePage = ({ data }: { data: any }) => {
+const HomePage = ({
+  topData,
+  sportsData,
+  travelData,
+}: {
+  topData: any
+  sportsData: any
+  travelData: any
+}) => {
   return (
     <div>
-      <NewsSection data={data} />
-      <SecondarySections data={data} />
-      <SecondarySections data={data} />
-      <SecondarySections data={data} />
-      <SecondarySections data={data} />
+      <NewsSection data={topData} />
+      <SecondarySections data={sportsData} />
+      <SecondarySections data={travelData} />
+      <SecondarySections data={topData} />
+      <SecondarySections data={topData} />
     </div>
   )
 }

@@ -5,9 +5,12 @@ import axios from "axios"
 import Header from "./Header/Header"
 import HomePage from "./HomePage/HomePage"
 import Articles from "./ArticlesPage/Articles"
+import Content from "./Content/Content"
 
 const App: React.FC = () => {
-  const [data, setData] = useState<any>()
+  const [topData, setTopData] = useState<any>()
+  const [sportsData, setSportsData] = useState<any>()
+  const [travelData, setTravelData] = useState<any>()
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -15,26 +18,38 @@ const App: React.FC = () => {
         `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
       )
 
-      setData(result.data.articles)
+      setTopData(result.data.articles)
     }
 
     fetchItems()
   }, [])
 
-  // console.log(data[0].urlToImage)
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://newsapi.org/v2/top-headlines?sources=espn&apiKey=c059878eb8a248959c5543585b80ba99`
+      )
+      setSportsData(result.data.articles)
+    }
+    fetchItems()
+  }, [])
 
-  // console.log(data[2].img)
-  // console.log(data[2].author)
-  // console.log(data[2].content)
-  // console.log(data[2].title)
-  // console.log(data[2].url)
-  // console.log(data[2].urlToImage)
-  // console.log(data[2].source.name)
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://newsapi.org/v2/top-headlines/sources?category=businessapiKey=c059878eb8a248959c5543585b80ba99`
+      )
+
+      setTravelData(result.data.articles)
+    }
+
+    fetchItems()
+  }, [])
 
   const fakeData = {
     author: "Rae Ellen Bichell, Kaiser Health News",
     content:
-      "What does it mean if a persons rapid antigen test result comes back positive after five days of isolation due to Covid-19? According to the experts, that person is most likely still carrying a viral … ",
+      "What does it mean if a persons rapid antigen test result comes back positive after five days of isolation due to Covid-19? According to the experts, that person is most likely still carrying a viral … Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit reprehenderit nobis est ipsum sed voluptas ratione. Molestias molestiae tempore reprehenderit beatae magnam et soluta sapiente, odio quia! Labore, maiores dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod necessitatibus repellat nam nesciunt eligendi et eius provident beatae ipsa, placeat magni dolore at maxime minus officiis rem, ullam iste! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo soluta adipisci officiis eligendi pariatur nesciunt mollitia maiores dolorum. Voluptates hic facilis dolor nesciunt quo culpa, commodi reiciendis exercitationem eaque cupiditate.",
     title:
       "It’s Day 6 of Covid and a rapid test come backs positive. What should you do? - Yahoo News",
     source: "Yahoo Entertainment",
@@ -45,8 +60,15 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
-      {/* {data && <HomePage data={data} />} */}
-      {data && <Articles data={data} />}
+      {/* {topData && sportsData && travelData && (
+        <HomePage
+          topData={topData}
+          sportsData={sportsData}
+          travelData={travelData}
+        />
+      )} */}
+      {/* {data && <Articles data={sportsData} />} */}
+      <Content fakeData={fakeData} />
     </div>
   )
 }
@@ -83,5 +105,6 @@ Extra
 
 
 
-
+create article page 
+create search page 
 */
