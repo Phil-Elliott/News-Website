@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react"
 import "./App.scss"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import axios from "axios"
 import Header from "./Header/Header"
 import HomePage from "./HomePage/HomePage"
-import axios from "axios"
+import Articles from "./ArticlesPage/Articles"
 
 const App: React.FC = () => {
   const [data, setData] = useState<any>()
 
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     const result = await axios(
-  //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
-  //     )
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
+      )
 
-  //     setData(result.data.articles)
-  //   }
+      setData(result.data.articles)
+    }
 
-  //   fetchItems()
-  // }, [])
+    fetchItems()
+  }, [])
+
+  // console.log(data[0].urlToImage)
 
   // console.log(data[2].img)
   // console.log(data[2].author)
@@ -41,7 +45,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
-      <HomePage fakeData={fakeData} />
+      {/* {data && <HomePage data={data} />} */}
+      {data && <Articles data={data} />}
     </div>
   )
 }
@@ -49,15 +54,6 @@ const App: React.FC = () => {
 export default App
 
 /*----------------------------------------------------------------
-
-picture 
-  {
-    title
-    description
-    publusher(CNN)
-  }
-
-Connect to the API and test it out 
 
 Create each section 
 1) Have each section with a linkable title 

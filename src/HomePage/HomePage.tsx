@@ -2,14 +2,14 @@ import React from "react"
 import NewsSection from "./NewsSection/NewsSection"
 import SecondarySections from "./SecondarySections/SecondarySections"
 
-const HomePage = ({ fakeData }: { fakeData: any }) => {
+const HomePage = ({ data }: { data: any }) => {
   return (
     <div>
-      <NewsSection fakeData={fakeData} />
-      <SecondarySections fakeData={fakeData} />
-      <SecondarySections fakeData={fakeData} />
-      <SecondarySections fakeData={fakeData} />
-      <SecondarySections fakeData={fakeData} />
+      <NewsSection data={data} />
+      <SecondarySections data={data} />
+      <SecondarySections data={data} />
+      <SecondarySections data={data} />
+      <SecondarySections data={data} />
     </div>
   )
 }
