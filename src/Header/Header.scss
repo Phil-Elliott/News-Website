@@ -146,7 +146,7 @@
   color: black;
   width: 100%;
   padding-block: 0.4%;
-  transition: 8s;
+  transition: 2s;
   position: relative;
 
   .header-bottom-container {
@@ -177,8 +177,8 @@
   }
 }
 .hidden-bottom-header {
-  margin-top: -100%;
-  transition: 8s;
+  margin-top: -10%;
+  transition: 2s;
 }
 .bottom-expand {
   display: none;

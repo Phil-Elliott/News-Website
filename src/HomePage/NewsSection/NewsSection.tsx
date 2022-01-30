@@ -1,14 +1,12 @@
 import React from "react"
 import "./NewsSection.scss"
 import ArticleContainer from "./ArticleContainer"
+import Header from "./../../SharedComponents/Header/Header"
 
 const NewsSection = ({ data }: { data: any }) => {
   return (
     <div className="news-container">
-      <div className="news-header-container">
-        <h1>News</h1>
-        <h2>Saturday, 29 January</h2>
-      </div>
+      <Header name="News" />
       <div className="articles-container ">
         <div
           className="article-container grid-row-span-2"
