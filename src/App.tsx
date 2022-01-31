@@ -6,45 +6,46 @@ import Header from "./Header/Header"
 import HomePage from "./HomePage/HomePage"
 import Articles from "./ArticlesPage/Articles"
 import Content from "./Content/Content"
+import Weather from "./Weather/Weather"
 
 const App: React.FC = () => {
   const [topData, setTopData] = useState<any>()
   const [sportsData, setSportsData] = useState<any>()
   const [travelData, setTravelData] = useState<any>()
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
-      )
+  // useEffect(() => {
+  //   const fetchItems = async () => {
+  //     const result = await axios(
+  //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
+  //     )
 
-      setTopData(result.data.articles)
-    }
+  //     setTopData(result.data.articles)
+  //   }
 
-    fetchItems()
-  }, [])
+  //   fetchItems()
+  // }, [])
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://newsapi.org/v2/top-headlines?sources=espn&apiKey=c059878eb8a248959c5543585b80ba99`
-      )
-      setSportsData(result.data.articles)
-    }
-    fetchItems()
-  }, [])
+  // useEffect(() => {
+  //   const fetchItems = async () => {
+  //     const result = await axios(
+  //       `https://newsapi.org/v2/top-headlines?sources=espn&apiKey=c059878eb8a248959c5543585b80ba99`
+  //     )
+  //     setSportsData(result.data.articles)
+  //   }
+  //   fetchItems()
+  // }, [])
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://newsapi.org/v2/top-headlines/sources?category=businessapiKey=c059878eb8a248959c5543585b80ba99`
-      )
+  // useEffect(() => {
+  //   const fetchItems = async () => {
+  //     const result = await axios(
+  //       `https://newsapi.org/v2/top-headlines/sources?category=businessapiKey=c059878eb8a248959c5543585b80ba99`
+  //     )
 
-      setTravelData(result.data.articles)
-    }
+  //     setTravelData(result.data.articles)
+  //   }
 
-    fetchItems()
-  }, [])
+  //   fetchItems()
+  // }, [])
 
   const fakeData = {
     author: "Rae Ellen Bichell, Kaiser Health News",
@@ -68,7 +69,8 @@ const App: React.FC = () => {
         />
       )} */}
       {/* {data && <Articles data={sportsData} />} */}
-      <Content fakeData={fakeData} />
+      {/* <Content fakeData={fakeData} /> */}
+      <Weather />
     </div>
   )
 }
