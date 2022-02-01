@@ -6,24 +6,25 @@ import Header from "./Header/Header"
 import HomePage from "./HomePage/HomePage"
 import Articles from "./ArticlesPage/Articles"
 import Content from "./Content/Content"
-import Weather from "./Weather/Weather"
+import Footer from "./Footer/Footer"
 
 const App: React.FC = () => {
   const [topData, setTopData] = useState<any>()
-  const [sportsData, setSportsData] = useState<any>()
-  const [travelData, setTravelData] = useState<any>()
+  // const [sportsData, setSportsData] = useState<any>()
+  // const [travelData, setTravelData] = useState<any>()
 
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     const result = await axios(
-  //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
-  //     )
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
+      )
 
-  //     setTopData(result.data.articles)
-  //   }
+      setTopData(result.data.articles)
+      console.log(result.data.articles)
+    }
 
-  //   fetchItems()
-  // }, [])
+    fetchItems()
+  }, [])
 
   // useEffect(() => {
   //   const fetchItems = async () => {
@@ -61,16 +62,16 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
-      {/* {topData && sportsData && travelData && (
+      {topData && (
         <HomePage
           topData={topData}
-          sportsData={sportsData}
-          travelData={travelData}
+          // sportsData={sportsData}
+          // travelData={travelData}
         />
-      )} */}
+      )}
       {/* {data && <Articles data={sportsData} />} */}
       {/* <Content fakeData={fakeData} /> */}
-      <Weather />
+      <Footer />
     </div>
   )
 }
@@ -79,34 +80,24 @@ export default App
 
 /*----------------------------------------------------------------
 
-Create each section 
-1) Have each section with a linkable title 
-2) Have a grid layout with each section ( could have diffirent one for the top section)
-3) Maybe just use top links for these sections and
+1) Connect Searchbar to api and make it responsive
+  1) connect to api
+  2) Make responsive
+  3) Create search results page
+  4) Have links to pages at the bottom 
 
-Create news objects to map through 
-1) Could use the same design for each one
-
-Create links pages
-1) Use same style as the home page
-
-Make news pages with the articles
-
-Connect Searchbar to api and make it responsive
-1) connect to api
-2) Make responsive
-3) Create search results page
-4) Have links to pages at the bottom 
-
-
-Extra
-1) Show date on the top right of the page 
-2) Show the current weather by grabbing the users location
+3) Make each image and title linkable
+    1) title and nav links goes to appropriate section
+    2) image goes to the article
+    
 
 
 
 
 
-create article page 
+
+
+
+
 create search page 
 */

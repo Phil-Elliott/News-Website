@@ -60,7 +60,7 @@ const WeatherData = ({ data, data2 }: { data: any; data2: any }) => {
             </p>
           </div>
         </div>
-        <div className="weather-container">
+        <div className="weather-container weather-container-hidden">
           <div className="weather-left">
             <img src={img4} alt="icon" />
           </div>

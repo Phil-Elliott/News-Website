@@ -1,0 +1,74 @@
+@import "./../Shared.scss";
+
+.footer {
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 13px;
+  font-size: clamp(8px, 0.85vw, 0.85vw);
+  margin-top: 2rem;
+
+  .footer-container {
+    @include container;
+
+    h1 {
+      font-size: 22px;
+      font-size: clamp(18px, 1.4vw, 1.4vw);
+      padding-block: 26px;
+    }
+    .footer-top-links-container {
+      border-bottom: 1px solid white;
+      font-size: clamp(13px, 0.85vw, 0.85vw);
+      font-weight: bold;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      padding-bottom: 16px;
+
+      .links {
+        border-left: 1px solid white;
+        p {
+          margin-left: 19px;
+        }
+        .link-padding-top {
+          padding-top: 16px;
+        }
+      }
+    }
+    .footer-bottom-links-container {
+      display: flex;
+      padding-block: 21px;
+
+      p {
+        margin-left: 0.75rem;
+      }
+    }
+    .bottom-info-footer {
+      p {
+        padding-bottom: 21px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .footer-top-links-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem;
+
+    .links {
+      border: none !important;
+
+      p {
+        margin-left: 0 !important;
+      }
+    }
+  }
+  .footer-bottom-links-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+
+    p {
+      margin: 0 !important;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
