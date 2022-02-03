@@ -8,8 +8,10 @@ const Footer = () => {
         <h1>Explore the NEWS</h1>
         <div className="footer-top-links-container">
           <div style={{ border: "none" }} className="links">
-            <p>Home</p>
-            <p className="link-padding-top">Music</p>
+            <p style={{ marginLeft: "0" }}>Home</p>
+            <p className="link-padding-top" style={{ marginLeft: "0" }}>
+              Music
+            </p>
           </div>
           <div className="links">
             <p>Sports</p>

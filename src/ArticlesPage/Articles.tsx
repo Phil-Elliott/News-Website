@@ -3,7 +3,7 @@ import "./Articles.scss"
 import ArticleContainer from "./ArticleContainer"
 import Header from "./../SharedComponents/Header/Header"
 
-const Articles = ({ data }: { data: any }) => {
+const Articles = ({ data, change }: { data: any; change: any }) => {
   return (
     <div className="articles-page">
       <Header name="News" />
@@ -14,13 +14,7 @@ const Articles = ({ data }: { data: any }) => {
         </div>
         {data.map((entry: any, i: number) => {
           if (i > 0) {
-            return (
-              <ArticleContainer
-                key={i}
-                image={data[i].urlToImage}
-                title={data[i].title}
-              />
-            )
+            return <ArticleContainer key={i} data={data} change={change} />
           }
         })}
       </div>

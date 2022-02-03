@@ -1,21 +1,16 @@
 import React from "react"
 
-const ArticleContainer = ({
-  image,
-  title,
-}: {
-  image: string
-  title: string
-}) => {
+const ArticleContainer = ({ data, change }: { data: any; change: any }) => {
   return (
     <div>
       <div
+        onClick={() => change("page", data)}
         className="article-container"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${image})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${data.urlToImage})`,
         }}
       >
-        <p>{title}</p>
+        <p>{data.title}</p>
       </div>
     </div>
   )

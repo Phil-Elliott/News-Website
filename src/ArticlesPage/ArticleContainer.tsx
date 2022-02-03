@@ -1,16 +1,10 @@
 import React from "react"
 
-const ArticleContainer = ({
-  image,
-  title,
-}: {
-  image: string
-  title: string
-}) => {
+const ArticleContainer = ({ data, change }: { data: any; change: any }) => {
   return (
-    <div className="article-container">
-      <img src={image} alt="" />
-      <p>{title}</p>
+    <div onClick={() => change("articles", data)} className="article-container">
+      <img src={data.urlToImage} alt="" />
+      <p>{data.title}</p>
     </div>
   )
 }

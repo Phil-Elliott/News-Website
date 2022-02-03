@@ -4,6 +4,7 @@
   @include container;
   font-weight: bold;
   margin-top: clamp(4rem, 5%, 5%);
+  margin-bottom: clamp(4rem, 17%, 17%);
 
   .articles-page-container {
     display: grid;
@@ -26,7 +27,7 @@
       grid-row: span 2;
       img {
         // height: 56.75
-        height: 83%;
+        height: 85%;
       }
     }
   }

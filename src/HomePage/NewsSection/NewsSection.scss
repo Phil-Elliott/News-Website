@@ -15,7 +15,7 @@
       color: white;
       display: flex;
       align-items: flex-end;
-      height: 30vh;
+      height: 25vh;
       background-position: center;
       object-fit: cover;
 
@@ -30,7 +30,7 @@
     }
     .grid-row-span-2 {
       grid-row: span 2;
-      height: 61vh;
+      height: 51vh;
       p {
         font-size: clamp(1rem, 1.75vw, 1.75vw);
       }

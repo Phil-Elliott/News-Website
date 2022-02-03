@@ -3,28 +3,23 @@ import "./NewsSection.scss"
 import ArticleContainer from "./ArticleContainer"
 import Header from "./../../SharedComponents/Header/Header"
 
-const NewsSection = ({ data }: { data: any }) => {
+const NewsSection = ({ data, change }: { data: any; change: any }) => {
   return (
     <div className="news-container">
       <Header name="News" />
       <div className="articles-container ">
         <div
+          onClick={() => change("page", data[0])}
           className="article-container grid-row-span-2"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${data[0].urlToImage})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${data[0].urlToImage})`,
           }}
         >
           <p>{data[0].title}</p>
         </div>
         {data.map((entry: any, i: number) => {
           if (i > 0 && i < 5) {
-            return (
-              <ArticleContainer
-                key={i}
-                image={data[i].urlToImage}
-                title={data[i].title}
-              />
-            )
+            return <ArticleContainer key={i} data={data[i]} change={change} />
           }
         })}
       </div>
@@ -33,6 +28,8 @@ const NewsSection = ({ data }: { data: any }) => {
 }
 
 export default NewsSection
+
+//
 
 // Can use for content container
 // {
