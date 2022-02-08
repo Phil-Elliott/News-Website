@@ -6,12 +6,33 @@ import Header from "./Header/Header"
 import HomePage from "./HomePage/HomePage"
 import Articles from "./ArticlesPage/Articles"
 import Content from "./Content/Content"
+import NewsFeed from "./NewsFeed/NewsFeed"
 import Footer from "./Footer/Footer"
 
 const App: React.FC = () => {
   const [topData, setTopData] = useState<any>()
   const [mainData, setMainData] = useState<any>()
-  const [changePage, setChangePage] = useState<string>("articles")
+  const [changePage, setChangePage] = useState<string>("home")
+  const [query, setQuery] = useState<any>("")
+  const [searchResults, setSearchResults] = useState<any>()
+  const [pageNumber, setPageNumber] = useState<any>(1)
+
+  const searchQuery = () => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://content.guardianapis.com/search?page=${pageNumber}&q=${query}&show-fields=headline,thumbnail,trailText,body,publication&api-key=eb7a9ca6-67a5-49cc-a553-058cf25815a6`
+      )
+      setSearchResults(result.data.response.results)
+      // console.log(result.data.response.results)
+    }
+
+    fetchItems()
+  }
+
+  const changeSearchPage = (number: any) => {
+    setPageNumber(number)
+    searchQuery()
+  }
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -26,17 +47,6 @@ const App: React.FC = () => {
     fetchItems()
   }, [])
 
-  const fakeData = {
-    author: "Rae Ellen Bichell, Kaiser Health News",
-    content:
-      "What does it mean if a persons rapid antigen test result comes back positive after five days of isolation due to Covid-19? According to the experts, that person is most likely still carrying a viral … Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit reprehenderit nobis est ipsum sed voluptas ratione. Molestias molestiae tempore reprehenderit beatae magnam et soluta sapiente, odio quia! Labore, maiores dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod necessitatibus repellat nam nesciunt eligendi et eius provident beatae ipsa, placeat magni dolore at maxime minus officiis rem, ullam iste! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo soluta adipisci officiis eligendi pariatur nesciunt mollitia maiores dolorum. Voluptates hic facilis dolor nesciunt quo culpa, commodi reiciendis exercitationem eaque cupiditate.",
-    title:
-      "It’s Day 6 of Covid and a rapid test come backs positive. What should you do? - Yahoo News",
-    source: "Yahoo Entertainment",
-    img: "https://s.yimg.com/ny/api/res/1.2/hbdqy4Kks4ZmuI8UXBGRIA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/uu/api/res/1.2/RixmI7yyXNl.BnnfUx2VHQ--~B/aD0xNjY3O3c9MjUwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/nbc_news_122/e70f061ca0ac975e38447c81dec2d522",
-    article: "https://news.yahoo.com/day-6-covid-rapid-test-094115891.html",
-  }
-
   const change = (page: string, data: any) => {
     setChangePage(page)
     setMainData(data)
@@ -45,7 +55,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header query={(q: any) => setQuery(q)} searchQuery={searchQuery} />
       {changePage === "home" ? (
         topData && <HomePage topData={topData} change={change} />
       ) : changePage === "articles" ? (
@@ -53,6 +63,14 @@ const App: React.FC = () => {
       ) : (
         <Content fakeData={mainData} data={topData} change={change} />
       )}
+      {/* {searchResults && (
+        <NewsFeed
+          searchResults={searchResults}
+          page={changeSearchPage}
+          pageNumber={pageNumber}
+          change={change}
+        />
+      )} */}
       <Footer />
     </div>
   )
@@ -61,6 +79,53 @@ const App: React.FC = () => {
 export default App
 
 /*----------------------------------------------------------------
+
+
+
+
+3) Have article links work and put content into content page 
+4) Make all links work 
+5) Maybe have the more links fetch from guardian api 
+6) Add router dom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) Search bar
+make search page 
+have results show up 
+change page by button at buttom and have the change page in fetch request 
+plug pages into content section 
+
+2) Make all links work 
+
+3) Deploy to netifly or hostinger 
+
+
+Search
+- fetch data from a news api 
+- Pass a state to grab the input from the search bar
+- Console log the data at first
+- Create a new page to show search content
+- Have a bar at the bottom to go through the diffirent sections 
+- Connect the data to the content page 
+
+
 
 1) Connect Searchbar to api and make it responsive
   1) connect to api
@@ -130,5 +195,17 @@ Header and footer will be the same
 
 // const [sportsData, setSportsData] = useState<any>()
   // const [travelData, setTravelData] = useState<any>()
+
+
+  const fakeData = {
+    author: "Rae Ellen Bichell, Kaiser Health News",
+    content:
+      "What does it mean if a persons rapid antigen test result comes back positive after five days of isolation due to Covid-19? According to the experts, that person is most likely still carrying a viral … Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit reprehenderit nobis est ipsum sed voluptas ratione. Molestias molestiae tempore reprehenderit beatae magnam et soluta sapiente, odio quia! Labore, maiores dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod necessitatibus repellat nam nesciunt eligendi et eius provident beatae ipsa, placeat magni dolore at maxime minus officiis rem, ullam iste! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo soluta adipisci officiis eligendi pariatur nesciunt mollitia maiores dolorum. Voluptates hic facilis dolor nesciunt quo culpa, commodi reiciendis exercitationem eaque cupiditate.",
+    title:
+      "It’s Day 6 of Covid and a rapid test come backs positive. What should you do? - Yahoo News",
+    source: "Yahoo Entertainment",
+    img: "https://s.yimg.com/ny/api/res/1.2/hbdqy4Kks4ZmuI8UXBGRIA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/uu/api/res/1.2/RixmI7yyXNl.BnnfUx2VHQ--~B/aD0xNjY3O3c9MjUwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/nbc_news_122/e70f061ca0ac975e38447c81dec2d522",
+    article: "https://news.yahoo.com/day-6-covid-rapid-test-094115891.html",
+  }
 
 */

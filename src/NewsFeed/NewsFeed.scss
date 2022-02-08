@@ -1,0 +1,76 @@
+@import "./../Shared.scss";
+
+.articles-container {
+  @include container;
+  padding-top: clamp(4rem, 5%, 5%);
+
+  .article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 0 auto;
+    width: 70%;
+    padding-bottom: 2rem;
+    img {
+      width: 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: clamp(1rem, 1.2vw, 1.2vw);
+      padding-bottom: 3%;
+    }
+    p {
+      font-size: clamp(0.8rem, 1vw, 1vw);
+      opacity: 0.9;
+    }
+  }
+}
+
+.page-nav {
+  @include container;
+  display: flex;
+  justify-content: center;
+  padding-block: clamp(2rem, 3%, 3%);
+
+  .number {
+    background-color: rgb(240, 240, 240);
+    font-size: clamp(12px, 1vw, 1vw);
+    font-weight: bold;
+    margin: 0 0.1rem;
+    padding: 1.15vh 0.95vw;
+
+    &:hover {
+      background-color: grey;
+      color: white;
+      cursor: pointer;
+    }
+    .icon {
+      font-size: 0.8rem;
+      font-size: clamp(2px, 0.8vw, 0.8vw);
+    }
+  }
+  .active {
+    background-color: grey;
+    color: white;
+    font-size: clamp(0.8rem, 1vw, 1vw);
+    font-weight: bold;
+    margin: 0 0.1rem;
+    padding: 1.15vh 0.95vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .article {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .article {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding-bottom: 4rem !important;
+  }
+}

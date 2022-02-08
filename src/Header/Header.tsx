@@ -3,7 +3,7 @@ import "./Header.scss"
 import TopHeader from "./HeaderComponents/TopHeader/TopHeader"
 import BottomHeader from "./HeaderComponents/BottomHeader/BottomHeader"
 
-const Header = () => {
+const Header = ({ query, searchQuery }: { query: any; searchQuery: any }) => {
   const [openBottom, setOpenBottom] = useState(true)
 
   // Opens and closes the bottom header
@@ -13,7 +13,11 @@ const Header = () => {
 
   return (
     <div>
-      <TopHeader changeHeader={changeHeader} />
+      <TopHeader
+        changeHeader={changeHeader}
+        query={query}
+        searchQuery={searchQuery}
+      />
       <BottomHeader openBottom={openBottom} />
     </div>
   )

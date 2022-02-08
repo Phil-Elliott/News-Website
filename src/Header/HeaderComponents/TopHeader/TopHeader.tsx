@@ -18,7 +18,15 @@ const headerArr: headerData[] = [
   { name: "Culture", color: "h-purple", hidden: "hidden" },
 ]
 
-const TopHeader = ({ changeHeader }: { changeHeader: any }) => {
+const TopHeader = ({
+  changeHeader,
+  query,
+  searchQuery,
+}: {
+  changeHeader: any
+  query: any
+  searchQuery: any
+}) => {
   return (
     <header className="header">
       <div className="header-container">
@@ -52,8 +60,8 @@ const TopHeader = ({ changeHeader }: { changeHeader: any }) => {
             <FaSortDown />
           </div>
           <div className="search-container">
-            <Search />
-            <FaSearch className="search-icon" />
+            <Search query={query} searchQuery={searchQuery} />
+            <FaSearch className="search-icon" onClick={searchQuery} />
           </div>
         </div>
       </div>
