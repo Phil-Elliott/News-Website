@@ -1,5 +1,4 @@
 import React from "react"
-import { transform } from "typescript"
 import "./Header.scss"
 
 const Header = ({ name, change }: { name: string; change?: any }) => {
