@@ -26,6 +26,7 @@
       .links {
         border-left: 1px solid white;
         p {
+          cursor: pointer;
           margin-left: 19px;
         }
         .link-padding-top {
@@ -38,6 +39,7 @@
       padding-block: 21px;
 
       p {
+        cursor: pointer;
         margin-left: 0.75rem;
       }
     }

@@ -6,13 +6,13 @@ import Header from "./../../SharedComponents/Header/Header"
 const NewsSection = ({ data, change }: { data: any; change: any }) => {
   return (
     <div className="news-container">
-      <Header name="News" />
+      <Header name="News" change={change} />
       <div className="articles-container ">
         <div
           onClick={() => change("page", data[0])}
           className="article-container grid-row-span-2"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${data[0].urlToImage})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),url(${data[0].urlToImage})`,
           }}
         >
           <p>{data[0].title}</p>

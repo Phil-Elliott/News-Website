@@ -12,12 +12,12 @@
     gap: 2%;
 
     .article-container {
+      cursor: pointer;
       font-size: clamp(0.8rem, 1vw, 1vw);
       img {
         width: 100%;
-        height: 65%;
+        max-height: 21vh;
         background-repeat: no-repeat;
-        // height: 20vh;
         object-fit: cover;
       }
     }
@@ -25,9 +25,12 @@
       font-size: clamp(1rem, 1.25vw, 1.25vw);
       grid-column: span 2;
       grid-row: span 2;
+      cursor: pointer;
       img {
-        // height: 56.75
-        height: 85%;
+        height: 86%;
+        width: 100%;
+        background-repeat: no-repeat;
+        object-fit: cover;
       }
     }
   }

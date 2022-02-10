@@ -1,7 +1,8 @@
 import React from "react"
+import { transform } from "typescript"
 import "./Header.scss"
 
-const Header = ({ name }: { name: string }) => {
+const Header = ({ name, change }: { name: string; change?: any }) => {
   const days = [
     "Sunday",
     "Monday",
@@ -32,7 +33,7 @@ const Header = ({ name }: { name: string }) => {
 
   return (
     <div className="news-header-container">
-      <h1>{name}</h1>
+      <h1 onClick={() => change("articles", "news")}>{name}</h1>
       <h2>{`${day}, ${dayNumber} ${month}`}</h2>
     </div>
   )

@@ -8,10 +8,12 @@ const NewsFeed = ({
   searchResults,
   page,
   pageNumber,
+  change,
 }: {
   searchResults: any
   page: any
   pageNumber: any
+  change: any
 }) => {
   const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -28,9 +30,9 @@ const NewsFeed = ({
   }
 
   return (
-    <div className="articles-container">
+    <div className="newsFeed-container">
       {searchResults.map((entry: any, i: number) => {
-        return <Article key={i} data={searchResults[i]} />
+        return <Article key={i} data={searchResults[i]} change={change} />
       })}
       <div
         className="page-nav"

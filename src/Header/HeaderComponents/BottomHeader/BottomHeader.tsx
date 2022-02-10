@@ -7,17 +7,23 @@ interface secondHeaderData {
   class?: string
 }
 const secondHeaderArr: secondHeaderData[] = [
-  { name: "Sports", class: "bottom-expand" },
-  { name: "Travel", class: "bottom-expand" },
-  { name: "Future", class: "bottom-expand" },
-  { name: "Culture", class: "bottom-expand" },
-  { name: "Music" },
+  { name: "sports", class: "bottom-expand" },
+  { name: "travel", class: "bottom-expand" },
+  { name: "future", class: "bottom-expand" },
+  { name: "culture", class: "bottom-expand" },
+  { name: "music" },
   { name: "TV" },
-  { name: "Weather" },
-  { name: "Worklife" },
+  { name: "weather" },
+  { name: "worklife" },
 ]
 
-const BottomHeader = ({ openBottom }: { openBottom: boolean }) => {
+const BottomHeader = ({
+  openBottom,
+  change,
+}: {
+  openBottom: boolean
+  change: any
+}) => {
   return (
     <div
       className={
@@ -32,6 +38,7 @@ const BottomHeader = ({ openBottom }: { openBottom: boolean }) => {
               key={i}
               name={secondHeaderArr[i].name}
               classs={secondHeaderArr[i].class}
+              change={change}
             />
           )
         })}

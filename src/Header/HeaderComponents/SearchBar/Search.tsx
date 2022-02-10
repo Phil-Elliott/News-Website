@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const Search = ({ query, searchQuery }: { query: any; searchQuery: any }) => {
+const Search = ({ query, page }: { query: any; page: any }) => {
   const [text, setText] = useState("")
 
   const change = (e: any) => {
@@ -8,8 +8,8 @@ const Search = ({ query, searchQuery }: { query: any; searchQuery: any }) => {
     query(e)
   }
 
-  const tryIt = () => {
-    searchQuery()
+  const searchIt = () => {
+    page(1)
   }
 
   return (
@@ -25,7 +25,8 @@ const Search = ({ query, searchQuery }: { query: any; searchQuery: any }) => {
           onKeyPress={(e) => {
             if (e.key === "Enter") {
               e.preventDefault()
-              tryIt()
+              searchIt()
+              setText("")
             }
           }}
         />

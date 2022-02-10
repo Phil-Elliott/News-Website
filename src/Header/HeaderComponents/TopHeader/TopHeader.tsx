@@ -10,22 +10,24 @@ interface headerData {
   hidden?: string
 }
 const headerArr: headerData[] = [
-  { name: "Home", color: "h-blue" },
-  { name: "News", color: "h-red" },
-  { name: "Sports", color: "h-orange", hidden: "hidden" },
-  { name: "Travel", color: "h-yellow", hidden: "hidden" },
-  { name: "Future", color: "h-green", hidden: "hidden" },
-  { name: "Culture", color: "h-purple", hidden: "hidden" },
+  { name: "home", color: "h-blue" },
+  { name: "news", color: "h-red" },
+  { name: "sports", color: "h-orange", hidden: "hidden" },
+  { name: "travel", color: "h-yellow", hidden: "hidden" },
+  { name: "future", color: "h-green", hidden: "hidden" },
+  { name: "culture", color: "h-purple", hidden: "hidden" },
 ]
 
 const TopHeader = ({
   changeHeader,
   query,
-  searchQuery,
+  change,
+  page,
 }: {
   changeHeader: any
   query: any
-  searchQuery: any
+  change: any
+  page: any
 }) => {
   return (
     <header className="header">
@@ -52,16 +54,18 @@ const TopHeader = ({
                 name={headerArr[i].name}
                 color={headerArr[i].color}
                 hidden={headerArr[i].hidden}
+                change={change}
               />
             )
           })}
+
           <div onClick={changeHeader} className="more-container">
             <p>More</p>
             <FaSortDown />
           </div>
           <div className="search-container">
-            <Search query={query} searchQuery={searchQuery} />
-            <FaSearch className="search-icon" onClick={searchQuery} />
+            <Search query={query} page={page} />
+            <FaSearch className="search-icon" onClick={() => page(1)} />
           </div>
         </div>
       </div>

@@ -3,18 +3,50 @@ import "./Articles.scss"
 import ArticleContainer from "./ArticleContainer"
 import Header from "./../SharedComponents/Header/Header"
 
-const Articles = ({ data, change }: { data: any; change: any }) => {
+const Articles = ({
+  data,
+  change,
+  titleName,
+}: {
+  data: any
+  change: any
+  titleName: string
+}) => {
   return (
     <div className="articles-page">
-      <Header name="News" />
-      <div className="articles-page-container">
-        <div className="article-container main-article-container">
-          <img src={data[0].urlToImage} alt="" />
-          <p>{data[0].title}</p>
-        </div>
+      <Header name={titleName} />
+      <div
+        className="articles-page-container"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        {titleName === "news" ? (
+          <div
+            className=" main-article-container"
+            onClick={() => change("page", data[0])}
+          >
+            <img src={data[0].urlToImage} alt="" />
+            <p>{data[0].title}</p>
+          </div>
+        ) : (
+          <div
+            className=" main-article-container"
+            onClick={() => change("page", data[0])}
+          >
+            <img src={data[0].fields.thumbnail} alt="" />
+            <p>{data[0].fields.headline}</p>
+          </div>
+        )}
+
         {data.map((entry: any, i: number) => {
           if (i > 0) {
-            return <ArticleContainer key={i} data={data} change={change} />
+            return (
+              <ArticleContainer
+                key={i}
+                data={entry}
+                change={change}
+                titleName={titleName}
+              />
+            )
           }
         })}
       </div>
@@ -23,13 +55,3 @@ const Articles = ({ data, change }: { data: any; change: any }) => {
 }
 
 export default Articles
-
-// connect other news apis
-// connect them to react router dom or use ternarys at first
-// need to pass the specific array based off of a click
-// connect the search bar and create a search bar page
-// Create the page for each article
-// Have each article clickable and relay the data to a specific page
-// Create Footer
-// Create weather component
-// If picture doesnt have img then have generic image

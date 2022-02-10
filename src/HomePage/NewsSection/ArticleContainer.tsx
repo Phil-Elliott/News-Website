@@ -7,7 +7,7 @@ const ArticleContainer = ({ data, change }: { data: any; change: any }) => {
         onClick={() => change("page", data)}
         className="article-container"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${data.urlToImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),url(${data.urlToImage})`,
         }}
       >
         <p>{data.title}</p>

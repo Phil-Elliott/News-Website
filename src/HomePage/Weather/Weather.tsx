@@ -21,7 +21,6 @@ const Weather = () => {
         .then((res) => res.json())
         .then((result) => {
           setData(result)
-          // console.log(result)
         })
       await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=alerts&appid=61a24258f264e81b56f6f55f67f15a40`
@@ -29,7 +28,6 @@ const Weather = () => {
         .then((res) => res.json())
         .then((result) => {
           setData2(result.daily)
-          console.log(result)
         })
     }
     fetchData()

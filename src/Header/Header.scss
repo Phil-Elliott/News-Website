@@ -62,6 +62,7 @@
   justify-content: center;
   width: 100%;
   padding-block: 0.75%;
+  text-transform: capitalize;
 }
 .more-container {
   width: 130%;
@@ -169,6 +170,7 @@
         width: 60%;
         padding: 0.25rem 0.5rem;
         cursor: pointer;
+        text-transform: capitalize;
 
         &:hover {
           background-color: rgba(0, 0, 0, 0.8);
