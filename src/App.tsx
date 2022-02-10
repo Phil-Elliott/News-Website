@@ -104,7 +104,6 @@ const App: React.FC = () => {
         setMainData(data)
     }
     setChangePage(page)
-    console.log(data)
   }
 
   return (
@@ -154,10 +153,10 @@ export default App
 
 /*----------------------------------------------------------------
 
+1) Host somewhere 
+2) Put on Portfolio 
+3) Add a read me file 
 
-
-make more responsive  (images are smushing together )
-launch website 
 
 
 
@@ -166,5 +165,6 @@ Make searchbar responsive
 make more links work (connect to something or leave alone)
 make case statements for more links 
 pass through the case 
+make words work better on bigger screens (use clamp)
 
 */
