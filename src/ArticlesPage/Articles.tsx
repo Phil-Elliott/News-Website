@@ -47,6 +47,8 @@ const Articles = ({
                 titleName={titleName}
               />
             )
+          } else {
+            return console.log("error")
           }
         })}
       </div>
