@@ -19,7 +19,7 @@ const NewsSection = ({ data, change }: { data: any; change: any }) => {
         </div>
         {data.map((entry: any, i: number) => {
           if (i > 0 && i < 5) {
-            return <ArticleContainer key={i} data={data[i]} change={change} />
+            return <ArticleContainer key={i} data={entry} change={change} />
           }
         })}
       </div>
