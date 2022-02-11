@@ -1,4 +1,4 @@
-# News App!
+# News App
 
 
 A news application that is connected to the Guardian API. It provides the user with a variety of news tags to choose from. There is also a search bar to use to find specific news articles.
