@@ -18,7 +18,7 @@ const headerArr: headerData[] = [
   { name: "culture", color: "h-purple", hidden: "hidden" },
 ]
 
-const TopHeader = ({
+const TopHeader = ({ 
   changeHeader,
   query,
   change,

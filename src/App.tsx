@@ -31,7 +31,7 @@ const App: React.FC = () => {
         `https://content.guardianapis.com/search?page=${number}&q=${query}&show-fields=headline,thumbnail,trailText,body,publication&api-key=eb7a9ca6-67a5-49cc-a553-058cf25815a6`
       )
       setSearchResults(result.data.response.results)
-      change("search", mainData)
+      change("search", "search")
     }
     fetchItems()
   }
@@ -95,7 +95,6 @@ const App: React.FC = () => {
         setMainData(data)
     }
     setChangePage(page)
-    console.log(data)
   }
 
   return (
@@ -121,7 +120,8 @@ const App: React.FC = () => {
           />
         )
       ) : changePage === "articles" ? (
-        mainData && (
+        mainData &&
+        titleName !== "search" && (
           <Articles data={mainData} change={change} titleName={titleName} />
         )
       ) : changePage === "page" ? (
@@ -142,21 +142,3 @@ const App: React.FC = () => {
 }
 
 export default App
-
-/*----------------------------------------------------------------
-
-1) Host somewhere 
-2) Put on Portfolio 
-3) Add a read me file 
-
-
-
-
-have alternate for articles without images 
-Make searchbar responsive 
-make more links work (connect to something or leave alone)
-make case statements for more links 
-pass through the case 
-make words work better on bigger screens (use clamp)
-
-*/
