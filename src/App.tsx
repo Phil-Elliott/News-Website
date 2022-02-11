@@ -41,16 +41,6 @@ const App: React.FC = () => {
     searchQuery(number)
   }
 
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     const result = await axios(
-  //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
-  //     )
-  //     setTopData(result.data.articles)
-  //   }
-  //   fetchItems()
-  // }, [])
-
   useEffect(() => {
     fetchNewsTags("news", setTopData)
     fetchNewsTags("sport", setSportsData)
@@ -105,6 +95,7 @@ const App: React.FC = () => {
         setMainData(data)
     }
     setChangePage(page)
+    console.log(data)
   }
 
   return (

@@ -21,7 +21,7 @@ const SecondarySections = ({
           onClick={() => change("page", data[0])}
           className="article-container"
         >
-          <img src={data[0].fields.thumbnail} alt="" /> 
+          <img src={data[0].fields.thumbnail} alt="" />
           <p>{data[0].fields.headline}</p>
         </div>
         <div

@@ -21,13 +21,13 @@ const HomePage = ({
   return (
     <div>
       <NewsSection data={topData} change={change} />
-      <SecondarySections data={sportsData} change={change} name="Sports" />
+      <SecondarySections data={sportsData} change={change} name="sports" />
       <Weather />
       <div className="secondary-background">
-        <SecondarySections data={travelData} change={change} name="Travel" />
+        <SecondarySections data={travelData} change={change} name="travel" />
       </div>
-      <SecondarySections data={futureData} change={change} name="Future" />
-      <SecondarySections data={cultureData} change={change} name="Culture" />
+      <SecondarySections data={futureData} change={change} name="future" />
+      <SecondarySections data={cultureData} change={change} name="culture" />
     </div>
   )
 }
