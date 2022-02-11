@@ -16,6 +16,4 @@ The app was built with React, React Hooks, and TypeScript. All fetch requests ar
 
 ## What I learned
 
-This project provided me with a great introduction to using TypeScript. I gained a good grasp on the basics and I am looking forward to getting an even better understing in my next project. I also got to improve my ability to work with data from an API. It required me to use state to pass the information throughout the application. 
-
-My CSS skills also improved with this project. I made everything responsive and focused on using dryer code with the help of mixins. 
+This project provided me with a great introduction to using TypeScript. I gained a good grasp on the basics and I am looking forward to getting an even better understing in my next project. I also got to improve my ability to work with data from an API. It required me to use state to pass the information throughout the application. My CSS skills also improved with this project. I made everything responsive and focused on using dryer code with the help of mixins. 
