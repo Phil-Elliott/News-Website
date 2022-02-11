@@ -11,17 +11,10 @@ const ArticleContainer = ({
 }) => {
   return (
     <div onClick={() => change("page", data)} className="article-container">
-      {titleName !== "news" ? (
-        <div>
-          <img src={data.fields.thumbnail} alt="" />
-          <p>{data.fields.headline}</p>
-        </div>
-      ) : (
-        <div>
-          <img src={data.urlToImage} alt="" />
-          <p>{data.title}</p>
-        </div>
-      )}
+      <div>
+        <img src={data.fields.thumbnail} alt="" />
+        <p>{data.fields.headline}</p>
+      </div>
     </div>
   )
 }

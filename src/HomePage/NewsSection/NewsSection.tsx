@@ -12,10 +12,10 @@ const NewsSection = ({ data, change }: { data: any; change: any }) => {
           onClick={() => change("page", data[0])}
           className="article-container grid-row-span-2"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),url(${data[0].urlToImage})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),url(${data[0].fields.thumbnail})`,
           }}
         >
-          <p>{data[0].title}</p>
+          <p>{data[0].fields.headline}</p>
         </div>
         {data.map((entry: any, i: number) => {
           if (i > 0 && i < 5) {

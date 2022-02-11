@@ -19,24 +19,13 @@ const Articles = ({
         className="articles-page-container"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        {titleName === "news" ? (
-          <div
-            className=" main-article-container"
-            onClick={() => change("page", data[0])}
-          >
-            <img src={data[0].urlToImage} alt="" />
-            <p>{data[0].title}</p>
-          </div>
-        ) : (
-          <div
-            className=" main-article-container"
-            onClick={() => change("page", data[0])}
-          >
-            <img src={data[0].fields.thumbnail} alt="" />
-            <p>{data[0].fields.headline}</p>
-          </div>
-        )}
-
+        <div
+          className=" main-article-container"
+          onClick={() => change("page", data[0])}
+        >
+          <img src={data[0].fields.thumbnail} alt="" />
+          <p>{data[0].fields.headline}</p>
+        </div>
         {data.map((entry: any, i: number) => {
           if (i > 0) {
             return (

@@ -41,17 +41,18 @@ const App: React.FC = () => {
     searchQuery(number)
   }
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
-      )
-      setTopData(result.data.articles)
-    }
-    fetchItems()
-  }, [])
+  // useEffect(() => {
+  //   const fetchItems = async () => {
+  //     const result = await axios(
+  //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=c059878eb8a248959c5543585b80ba99`
+  //     )
+  //     setTopData(result.data.articles)
+  //   }
+  //   fetchItems()
+  // }, [])
 
   useEffect(() => {
+    fetchNewsTags("news", setTopData)
     fetchNewsTags("sport", setSportsData)
     fetchNewsTags("travel", setTravelData)
     fetchNewsTags("technology", setFutureData)
@@ -65,9 +66,10 @@ const App: React.FC = () => {
 
   const fetchNewsTags = async (data: string, set: any) => {
     const result = await axios(
-      `https://content.guardianapis.com/search?page=1&q=${data}&show-fields=headline,thumbnail,trailText,body,publication&api-key=eb7a9ca6-67a5-49cc-a553-058cf25815a6`
+      `https://content.guardianapis.com/search?page-size=25&q=${data}&show-fields=headline,thumbnail,trailText,body,publication,lastModified&api-key=eb7a9ca6-67a5-49cc-a553-058cf25815a6`
     )
     set(result.data.response.results)
+    console.log(result.data.response.results)
   }
 
   const change = (page: string, data: any) => {
