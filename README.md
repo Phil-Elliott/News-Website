@@ -1,46 +1,19 @@
-# Getting Started with Create React App
+# News App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+A news application that is connected to the Guardian API. It provides the user with a variety of news tags to choose from. There is also a search bar to use to find specific news articles.
 
-In the project directory, you can run:
 
-### `npm start`
+## How it works
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The user will first see the homepage, where there are different sections of news articles to choose from. The user can select a section title that will lead to a page of articles related to that topic. The user can also select an article to read that will lead to a separate page with the articles content. The links in the header and the footer can also be used to look through articles. Each link will show a different selection of articles to choose from.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Alternatively the user can use the search bar to search for specific articles. The user can search by typing and clicking the search icon or pressing enter. This will lead to a page that displays 10 articles for the user to choose from. The user also has the ability to load another page of content by using the page navigation on the bottom of the page.
 
-### `npm test`
+## Software Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app was built with React, React Hooks, and TypeScript. All fetch requests are done with Axios. The styling was done with SCSS. 
 
-### `npm run build`
+## What I learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project provided me with a great introduction to using TypeScript. I gained a good grasp on the basics and I am looking forward to getting an even better understanding in my next project. I also got to improve my ability to work with data from an API. It required me to use state to pass the information throughout the application. My CSS skills also improved with this project. I made everything responsive and focused on using dryer code with the help of mixins
