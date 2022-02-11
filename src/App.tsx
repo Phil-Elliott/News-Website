@@ -69,7 +69,6 @@ const App: React.FC = () => {
       `https://content.guardianapis.com/search?page-size=25&q=${data}&show-fields=headline,thumbnail,trailText,body,publication,lastModified&api-key=eb7a9ca6-67a5-49cc-a553-058cf25815a6`
     )
     set(result.data.response.results)
-    console.log(result.data.response.results)
   }
 
   const change = (page: string, data: any) => {
