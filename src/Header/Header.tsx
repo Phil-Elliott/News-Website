@@ -12,7 +12,7 @@ const Header = ({
   change: any
   page: any
 }) => {
-  const [openBottom, setOpenBottom] = useState(true)
+  const [openBottom, setOpenBottom] = useState(false)
 
   // Opens and closes the bottom header
   const changeHeader = () => {
