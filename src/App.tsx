@@ -42,7 +42,7 @@ const App: React.FC = () => {
   }
 
   useEffect(() => {
-    fetchNewsTags("news", setTopData)
+    fetchNewsTags("uk", setTopData)
     fetchNewsTags("sport", setSportsData)
     fetchNewsTags("travel", setTravelData)
     fetchNewsTags("technology", setFutureData)
@@ -136,7 +136,7 @@ const App: React.FC = () => {
           />
         )
       )}
-      <Footer change={change} />
+      {topData && <Footer change={change} />}
     </div>
   )
 }
