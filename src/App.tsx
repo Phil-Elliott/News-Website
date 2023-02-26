@@ -104,38 +104,40 @@ const App: React.FC = () => {
         change={change}
         page={changeSearchPage}
       />
-      {changePage === "home" ? (
-        topData &&
-        sportsData &&
-        travelData &&
-        futureData &&
-        cultureData && (
-          <HomePage
-            topData={topData}
-            sportsData={sportsData}
-            travelData={travelData}
-            futureData={futureData}
-            cultureData={cultureData}
-            change={change}
-          />
-        )
-      ) : changePage === "articles" ? (
-        mainData &&
-        titleName !== "search" && (
-          <Articles data={mainData} change={change} titleName={titleName} />
-        )
-      ) : changePage === "page" ? (
-        <Content fakeData={mainData} data={topData} change={change} />
-      ) : (
-        searchResults && (
-          <NewsFeed
-            searchResults={searchResults}
-            page={changeSearchPage}
-            pageNumber={pageNumber}
-            change={change}
-          />
-        )
-      )}
+      <div className="main-container">
+        {changePage === "home" ? (
+          topData &&
+          sportsData &&
+          travelData &&
+          futureData &&
+          cultureData && (
+            <HomePage
+              topData={topData}
+              sportsData={sportsData}
+              travelData={travelData}
+              futureData={futureData}
+              cultureData={cultureData}
+              change={change}
+            />
+          )
+        ) : changePage === "articles" ? (
+          mainData &&
+          titleName !== "search" && (
+            <Articles data={mainData} change={change} titleName={titleName} />
+          )
+        ) : changePage === "page" ? (
+          <Content fakeData={mainData} data={topData} change={change} />
+        ) : (
+          searchResults && (
+            <NewsFeed
+              searchResults={searchResults}
+              page={changeSearchPage}
+              pageNumber={pageNumber}
+              change={change}
+            />
+          )
+        )}
+      </div>
       {topData && <Footer change={change} />}
     </div>
   );
