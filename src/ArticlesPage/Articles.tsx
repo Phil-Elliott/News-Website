@@ -36,8 +36,6 @@ const Articles = ({
                 titleName={titleName}
               />
             );
-          } else {
-            return;
           }
         })}
       </div>
