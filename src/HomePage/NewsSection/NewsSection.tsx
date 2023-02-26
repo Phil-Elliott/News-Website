@@ -21,7 +21,7 @@ const NewsSection = ({ data, change }: { data: any; change: any }) => {
           if (i > 0 && i < 5) {
             return <ArticleContainer key={i} data={entry} change={change} />;
           } else {
-            return;
+            return console.log();
           }
         })}
       </div>
