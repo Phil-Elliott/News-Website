@@ -1,7 +1,7 @@
-import React from "react"
-import "./NewsSection.scss"
-import ArticleContainer from "./ArticleContainer"
-import Header from "./../../SharedComponents/Header/Header"
+import React from "react";
+import "./NewsSection.scss";
+import ArticleContainer from "./ArticleContainer";
+import Header from "./../../SharedComponents/Header/Header";
 
 const NewsSection = ({ data, change }: { data: any; change: any }) => {
   return (
@@ -19,17 +19,17 @@ const NewsSection = ({ data, change }: { data: any; change: any }) => {
         </div>
         {data.map((entry: any, i: number) => {
           if (i > 0 && i < 5) {
-            return <ArticleContainer key={i} data={entry} change={change} />
+            return <ArticleContainer key={i} data={entry} change={change} />;
           } else {
-            return console.log("error")
+            return;
           }
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsSection
+export default NewsSection;
 
 //
 

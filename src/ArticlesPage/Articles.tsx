@@ -1,16 +1,16 @@
-import React from "react"
-import "./Articles.scss"
-import ArticleContainer from "./ArticleContainer"
-import Header from "./../SharedComponents/Header/Header"
+import React from "react";
+import "./Articles.scss";
+import ArticleContainer from "./ArticleContainer";
+import Header from "./../SharedComponents/Header/Header";
 
 const Articles = ({
   data,
   change,
   titleName,
 }: {
-  data: any
-  change: any
-  titleName: string
+  data: any;
+  change: any;
+  titleName: string;
 }) => {
   return (
     <div className="articles-page">
@@ -35,14 +35,14 @@ const Articles = ({
                 change={change}
                 titleName={titleName}
               />
-            )
+            );
           } else {
-            return console.log("error")
+            return;
           }
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Articles
+export default Articles;

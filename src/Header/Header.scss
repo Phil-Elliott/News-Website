@@ -216,4 +216,9 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .hidden-bottom-header {
+    margin-top: -40%;
+    transition: 1s;
+  }
 }
