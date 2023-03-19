@@ -1,5 +1,6 @@
 # News App
 
+![News-Home](https://user-images.githubusercontent.com/89685937/226148908-958e71f8-4f74-4195-97c3-1c776219b8e8.png)
 
 A news application that is connected to the Guardian API. It provides the user with a variety of news tags to choose from. There is also a search bar to use to find specific news articles.
 
